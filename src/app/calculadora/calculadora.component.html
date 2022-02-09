@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Calculadora</title>
+</head>
+<body>
+  <h1>Calculadora</h1>
+  <form [formGroup]="calculadora" (ngSubmit)="onSubmit()">
+    
+    <p>Nombre: <input type="text" formControlName="Name" name="nombre"></p>
+    
+    <p class="sexo">Sexo:
+      <input type="radio" name="hm" value="h" formControlName="hombre"> Hombre
+      <input type="radio" name="hm" value="m" formControlName="mujer"> Mujer
+    </p>
+
+    <p>Peso:</p>
+    <button type="button">+</button>
+    <input [(ngModel)]="peso"  type="number" formControlName="peso" id="peso">
+    <button type="button">-</button>
+
+    <p>Altura:</p>
+    <button type="button">+</button>
+    <input  [(ngModel)]="altura" type="number" formControlName="altura" id="altura">
+    <button type="button">-</button>
+    <p>
+      <button type="reset" value="Borrar">Borrar</button>
+      <button (click)="onSubmit()" type="submit">CALCULAR</button>
+    </p>
+  </form>
+
+  Resultado:
+  <input [(ngModel)]="resultado" type="number">
+ 
+</body>
+</html>

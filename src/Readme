@@ -1,0 +1,8 @@
+crear proyecto en angular 
+ng new nombreProyecto 
+
+para lanzar el proyecto 
+ng serve 
+
+para crear nuevos componentes 
+ng generate component nombre-del-componente
