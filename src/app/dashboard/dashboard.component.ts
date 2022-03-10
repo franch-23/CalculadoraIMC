@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output,EventEmitter, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+
+
 
 @Component({
   selector: 'app-dashboard',
@@ -7,11 +9,11 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-
+ 
   peso:string;
-   resultado:number;
-   texto:string;
-
+  resultado:number;
+  texto:string;
+  
 
   constructor(private route:ActivatedRoute) { 
     this.peso ='';
@@ -20,12 +22,13 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getResultado();
+   this.getResultado();
   }
-  getResultado(){
+
+ public getResultado():void{
     if (this.resultado <= 18) {
       this.texto = 'Bajo de peso';
-      this.texto = 'Tienes un peso corporal inferior al normal.';
+      this.texto = 'estas flaco';
       console.log(this.texto)
     } else if (this.resultado >= 18.01 && this.resultado <= 24.99) {
       this.texto = 'Peso normal';
@@ -40,5 +43,8 @@ export class DashboardComponent implements OnInit {
       this.texto = 'Obesidad extrema';
       this.texto = 'Tienes un peso corporal extremadamente superior al normal.';
     }
+}
+public getmensaje(e: string){
+  document.write(e);
 }
 }

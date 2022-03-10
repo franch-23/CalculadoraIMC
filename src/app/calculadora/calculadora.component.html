@@ -19,17 +19,19 @@
     </p>
 
     <p>Peso:</p>
-    <button type="button">+</button>
-    <input [(ngModel)]="peso"  type="number" formControlName="peso" id="peso">
-    <button type="button">-</button>
+    <button (click)="masPeso()" type="button">+</button>
+    <input  [(ngModel)]="peso"type="number" formControlName="peso" id="peso">
+    <button (click)="menosPeso()"type="button">-</button>
 
     <p>Altura:</p>
-    <button type="button">+</button>
+    <button (click)="masAltura()"type="button" >+</button>
     <input  [(ngModel)]="altura" type="number" formControlName="altura" id="altura">
-    <button type="button">-</button>
+    <button (click)="menosAltura()"type="button">-</button>
     <p>
       <button type="reset" value="Borrar">Borrar</button>
       <button (click)="onSubmit()" type="submit">CALCULAR</button>
+      <button (click)="ejecutarhola()" type="submit">Historial de peso y altura</button>
+    
     </p>
   </form>
 
